@@ -269,6 +269,7 @@ body {
 /*---------MOBILE SCREEN SIZES----------*/
 @media screen and (max-width: 1200px) {
   html {
+    background-size: cover;
     background-attachment: fixed;
   }
 
@@ -409,6 +410,7 @@ body {
 /* Small phones */
 @media screen and (max-width: 550px) {
   html {
+    background-size: cover;
     background-attachment: fixed;
   }
 
