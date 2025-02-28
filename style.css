@@ -1,0 +1,247 @@
+/*----------------------------------*/
+html, body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+html {
+  background-image: url("../images/a.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "DM Sans", 'Roboto', sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "logo logo"
+    "navbar navbar"
+    "what how"
+    "section1 section1"
+    "section2 section2"
+    "section3 section3"
+    "footer footer";
+  gap: 1rem;
+  background-color: #2195f300;
+  padding: 5px;
+}
+
+.nav {
+  grid-area: navbar;
+  background-color: #d4d4d4;
+}
+
+.parallax-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.logo {
+  grid-area: logo;
+  height: auto;
+}
+
+.what {
+  grid-area: what;
+  opacity: 0.96;
+  font-size: 2rem;
+  background-color: #eadbbc;
+  padding: 2rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.how {
+  grid-area: how;
+  opacity: 0.96;
+  font-size: 2rem;
+  background-color: #eadbbc;
+  padding: 2rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.nav {
+  grid-area: navbar;
+  z-index: 1;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.4rem;
+  border-radius: 0.3rem;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #569b1b;
+  font-weight: 550;
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
+
+}
+
+.nav ul li a:hover {
+  transition: all 0.3s ease;
+  background-color: #c0c0c0;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.nav ul li {
+  margin: 0 5.2rem;
+}
+
+/*---------HOME: DONATION SECTION----------*/
+
+.donation-section {
+  grid-area: section1;
+  display: flex;
+  align-items: center;
+  opacity: 0.96;
+  font-size: 2rem;
+  padding: 2rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.donation-section p {
+  color: #f3f3f3;
+  margin-right: 3.5rem;
+  font-weight: 500;
+}
+
+.donation-section img {
+  width: 40%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.donation-section .donate-button {
+  width: 25%;
+  height: auto;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #569b1b;
+  border: none;
+  font-family: "DM Sans";
+  color: #f3f3f3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.donation-section .donate-button:hover {
+  background-color: #6aba24;
+  cursor: pointer;
+}
+
+/*---------HOME: OPPORTUNITIES SECTION----------*/
+
+.opportunities-section {
+  grid-area: section2;
+  display: flex;
+  align-items: center;
+  opacity: 0.96;
+  font-size: 2rem;
+  padding: 2rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  background-color: #eadbbc;
+}
+
+.opportunities-section img {
+  width: 40%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.opportunities-section p {
+  color: #000000;
+  margin-left: 3.5rem;
+  font-weight: 500;
+}
+
+.opportunities-section .opportunities-button {
+  width: 25%;
+  height: auto;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #569b1b;
+  border: none;
+  font-family: "DM Sans";
+  color: #f3f3f3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.opportunities-section .opportunities-button:hover {
+  background-color: #6aba24;
+  cursor: pointer;
+}
+
+/*---------HOME: MEDIA SECTION----------*/
+
+.media-section {
+  grid-area: section3;
+  display: flex;
+  align-items: center;
+  opacity: 0.96;
+  font-size: 2rem;
+  padding: 2rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.media-section p {
+  color: #f3f3f3;
+  margin-right: 3.5rem;
+  font-weight: 500;
+}
+
+.media-section img {
+  width: 40%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.media-section .media-button {
+  width: 25%;
+  height: auto;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #569b1b;
+  border: none;
+  font-family: "DM Sans";
+  color: #f3f3f3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.media-section .media-button:hover {
+  background-color: #6aba24;
+  cursor: pointer;
+}
+
+/*----- Start Parallax -----*/
+.parallax {
+  height: 50vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
