@@ -22,6 +22,7 @@ body {
     "section1 section1"
     "section2 section2"
     "section3 section3"
+    "section4 section4"
     "footer footer";
   gap: 1rem;
   background-color: #2195f300;
@@ -230,6 +231,51 @@ body {
 }
 
 .media-section .media-button:hover {
+  background-color: #6aba24;
+  cursor: pointer;
+}
+
+/*---------HOME: EDUCATIONAL SECTION----------*/
+
+.educational-section {
+  grid-area: section4;
+  display: flex;
+  align-items: center;
+  opacity: 0.96;
+  font-size: 2rem;
+  padding: 2rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  background-color: #eadbbc;
+}
+
+.educational-section img {
+  width: 40%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.educational-section p {
+  color: #000000;
+  font-weight: 500;
+  margin: 3rem;
+}
+
+.educational-section .educational-button {
+  width: 25%;
+  height: auto;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #569b1b;
+  border: none;
+  font-family: "DM Sans";
+  color: #f3f3f3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.educational-section .educational-button:hover {
   background-color: #6aba24;
   cursor: pointer;
 }
