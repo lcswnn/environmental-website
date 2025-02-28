@@ -268,6 +268,10 @@ body {
 
 /*---------MOBILE SCREEN SIZES----------*/
 @media screen and (max-width: 1200px) {
+  html {
+    background-attachment: scroll;
+  }
+
   body {
     display: grid;
     grid-template-columns: 1fr;
@@ -404,6 +408,10 @@ body {
 
 /* Small phones */
 @media screen and (max-width: 550px) {
+  html {
+    background-attachment: scroll;
+  }
+
   .nav ul li a {
     font-size: 1rem;
   }
