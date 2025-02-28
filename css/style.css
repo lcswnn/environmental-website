@@ -115,8 +115,8 @@ body {
 
 .donation-section p {
   color: #f3f3f3;
-  margin-right: 3.5rem;
   font-weight: 500;
+  margin: 3rem;
 }
 
 .donation-section img {
@@ -166,8 +166,8 @@ body {
 
 .opportunities-section p {
   color: #000000;
-  margin-left: 3.5rem;
   font-weight: 500;
+  margin: 3rem;
 }
 
 .opportunities-section .opportunities-button {
@@ -205,8 +205,8 @@ body {
 
 .media-section p {
   color: #f3f3f3;
-  margin-right: 3.5rem;
   font-weight: 500;
+  margin: 3rem;
 }
 
 .media-section img {
