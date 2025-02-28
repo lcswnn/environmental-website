@@ -29,11 +29,6 @@ body {
   padding: 5px;
 }
 
-.nav {
-  grid-area: navbar;
-  background-color: #d4d4d4;
-}
-
 .parallax-logo img {
   width: 100%;
   height: auto;
@@ -68,12 +63,13 @@ body {
 
 .nav {
   grid-area: navbar;
+  background-color: #d4d4d4;
   z-index: 1;
 }
 
 .nav ul {
-  list-style-type: none;
   display: flex;
+  list-style-type: none;
   align-items: center;
   justify-content: center;
   padding: 1.4rem;
@@ -120,31 +116,6 @@ body {
   margin: 3rem;
 }
 
-.donation-section img {
-  width: 40%;
-  height: auto;
-  border-radius: 0.5rem;
-}
-
-.donation-section .donate-button {
-  width: 25%;
-  height: auto;
-  font-size: 1.6rem;
-  padding: 1rem;
-  border-radius: 1rem;
-  background-color: #569b1b;
-  border: none;
-  font-family: "DM Sans";
-  color: #f3f3f3;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.donation-section .donate-button:hover {
-  background-color: #6aba24;
-  cursor: pointer;
-}
-
 /*---------HOME: OPPORTUNITIES SECTION----------*/
 
 .opportunities-section {
@@ -159,35 +130,10 @@ body {
   background-color: #eadbbc;
 }
 
-.opportunities-section img {
-  width: 40%;
-  height: auto;
-  border-radius: 0.5rem;
-}
-
 .opportunities-section p {
   color: #000000;
   font-weight: 500;
   margin: 3rem;
-}
-
-.opportunities-section .opportunities-button {
-  width: 25%;
-  height: auto;
-  font-size: 1.6rem;
-  padding: 1rem;
-  border-radius: 1rem;
-  background-color: #569b1b;
-  border: none;
-  font-family: "DM Sans";
-  color: #f3f3f3;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.opportunities-section .opportunities-button:hover {
-  background-color: #6aba24;
-  cursor: pointer;
 }
 
 /*---------HOME: MEDIA SECTION----------*/
@@ -210,31 +156,6 @@ body {
   margin: 3rem;
 }
 
-.media-section img {
-  width: 40%;
-  height: auto;
-  border-radius: 0.5rem;
-}
-
-.media-section .media-button {
-  width: 25%;
-  height: auto;
-  font-size: 1.6rem;
-  padding: 1rem;
-  border-radius: 1rem;
-  background-color: #569b1b;
-  border: none;
-  font-family: "DM Sans";
-  color: #f3f3f3;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.media-section .media-button:hover {
-  background-color: #6aba24;
-  cursor: pointer;
-}
-
 /*---------HOME: EDUCATIONAL SECTION----------*/
 
 .educational-section {
@@ -249,19 +170,17 @@ body {
   background-color: #eadbbc;
 }
 
-.educational-section img {
-  width: 40%;
-  height: auto;
-  border-radius: 0.5rem;
-}
-
 .educational-section p {
   color: #000000;
   font-weight: 500;
   margin: 3rem;
 }
 
-.educational-section .educational-button {
+/* Buttons styling */
+.donate-button,
+.opportunities-button,
+.media-button,
+.educational-button {
   width: 25%;
   height: auto;
   font-size: 1.6rem;
@@ -273,13 +192,27 @@ body {
   color: #f3f3f3;
   text-decoration: none;
   font-weight: 500;
+  display: inline-block;
 }
 
-.educational-section .educational-button:hover {
+.donate-button:hover,
+.opportunities-button:hover,
+.media-button:hover,
+.educational-button:hover {
   background-color: #6aba24;
   cursor: pointer;
 }
 
+
+/* Images in sections */
+.donation-section img,
+.opportunities-section img,
+.media-section img,
+.educational-section img {
+  width: 40%;
+  height: auto;
+  border-radius: 0.5rem;
+}
 /*----- Start Parallax -----*/
 .parallax {
   height: 50vh;
@@ -290,4 +223,232 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.parallax-logo img {
+  width: 100%;
+  height: auto;
+  align-items: center;
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 15px;
+  z-index: 10;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #569b1b;
+  margin: 6px 0;
+  transition: 0.4s;
+  border-radius: 3px;
+}
+
+/* Rotate the bars to form an X when the menu is active */
+.active .bar1 {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.active .bar2 {
+  opacity: 0;
+}
+
+.active .bar3 {
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/*---------MOBILE SCREEN SIZES----------*/
+@media screen and (max-width: 1200px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "navbar"
+      "what"
+      "how"
+      "section1"
+      "section2"
+      "section3"
+      "section4"
+      "footer";
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  /* Hide menu by default */
+  .nav ul#nav-menu {
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    width: 100%;
+    left: 0;
+    background-color: #d4d4d4;
+    z-index: 999;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  /* When menu is active */
+  .nav ul #nav-menu .show {
+    display: flex;
+  }
+
+  /* Style menu items */
+  #nav-menu li {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .nav ul#nav-menu li a {
+    display: block;
+    padding: 15px;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+
+  /* Animate hamburger to X */
+  .hamburger-menu.active .bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .hamburger-menu.active .bar2 {
+    opacity: 0;
+  }
+  
+  .hamburger-menu.active .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
+
+  .what {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .what h2 {
+    font-size: 2.5rem;
+    padding: 1rem;
+  }
+
+  .how {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .how h2 {
+    font-size: 2.5rem;
+    padding: 1rem;
+  }
+  
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  
+  .nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .parallax {
+    height: auto;
+    min-height: 30vh;
+  }
+  
+  .donation-section,
+  .opportunities-section,
+  .media-section,
+  .educational-section {
+    flex-direction: column;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .donation-section img,
+  .opportunities-section img,
+  .media-section img,
+  .educational-section img {
+    width: 70%;
+    margin-bottom: 1rem;
+    order: -1;
+  }
+  
+  .donation-section p,
+  .opportunities-section p,
+  .media-section p,
+  .educational-section p {
+    font-size: 2rem;
+    margin: 1rem;
+  }
+
+  .donate-button,
+  .opportunities-button,
+  .media-button,
+  .educational-button {
+    width: 50%;
+    font-size: 1.7rem;
+    margin-top: 1rem;
+  }
+}
+
+/* Small phones */
+@media screen and (max-width: 550px) {
+  .nav ul li a {
+    font-size: 1rem;
+  }
+  
+  .what {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .what h2 {
+    font-size: 1.5rem;
+    padding: 0.8rem;
+  }
+
+  .how {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .how h2 {
+    font-size: 1.5rem;
+    padding: 0.8rem;
+  }
+  
+  .donation-section,
+  .opportunities-section,
+  .media-section,
+  .educational-section {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .donation-section p,
+  .opportunities-section p,
+  .media-section p,
+  .educational-section p {
+    font-size: 1rem;
+    margin: 1rem;
+  }
+  
+  .donate-button,
+  .opportunities-button,
+  .media-button,
+  .educational-button {
+    width: 50%;
+    font-size: 0.9rem;
+  }
 }
