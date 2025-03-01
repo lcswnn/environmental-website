@@ -181,7 +181,8 @@ body {
 .oceana a,
 .forest a,
 .lakes a {
-  font-size: 1.7rem;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 /*---------HOME: DONATION SECTION----------*/
