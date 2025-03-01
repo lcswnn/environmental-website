@@ -5,7 +5,7 @@ html, body {
 }
 
 html {
-  background-image: url("../images/b.jpg");
+  background-image: url("../images/c.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -27,6 +27,31 @@ body {
   gap: 1rem;
   background-color: #2195f300;
   padding: 5px;
+}
+
+.header-container {
+  grid-area: logo;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh; /* Adjust this value to control vertical spacing */
+}
+
+.title h1 {
+  grid-area: logo;
+  font-family: "DM Sans", 'Roboto', sans-serif;
+  font-weight: 600; /* Light weight to match the logo */
+  font-size: 6.5rem; /* Adjust size as needed */
+  color: white; /* White text like the logo */
+  text-align: center;
+  letter-spacing: 2px; /* Add some letter spacing to match the logo's look */
+  width: 100%; /* Make it take full width of container */
+  margin: 1.5rem 0; /* Center vertically with margin */
+  padding: 1rem 0; /* Add some padding but keep it 0 on the sides */
+  position: relative; /* For positioning the green accent */
+  left: 0; /* Reset any potential positioning */
+  right: 0;
 }
 
 .parallax-logo img {
@@ -286,6 +311,10 @@ body {
       "footer";
   }
 
+  .title h1 {
+    font-size: 4.5rem;
+  }
+
   .nav {
     position: relative;
     width: 100%;
@@ -322,7 +351,8 @@ body {
   }
 
   .nav ul#nav-menu.show {
-    max-height: 300px;
+    grid-area: nav;
+    max-height: 700px;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -434,6 +464,10 @@ body {
   html {
     background-size: cover;
     background-attachment: fixed;
+  }
+
+  .title h1 {
+    font-size: 1.75rem;
   }
 
   .nav {
