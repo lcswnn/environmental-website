@@ -25,7 +25,6 @@ body {
     "section4 section4"
     "footer footer";
   gap: 1rem;
-  background-color: #2195f300;
   padding: 5px;
 }
 
@@ -123,7 +122,7 @@ body {
 
 /*---------HOME: DONATION SECTION----------*/
 
-.donation-section {
+.donation-section, .media-section {
   grid-area: section1;
   display: flex;
   align-items: center;
@@ -132,10 +131,10 @@ body {
   padding: 2rem;
   border-radius: 0.3rem;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
-.donation-section p {
+.donation-section p, .media-section p {
   color: #f3f3f3;
   font-weight: 500;
   margin: 3rem;
@@ -143,7 +142,7 @@ body {
 
 /*---------HOME: OPPORTUNITIES SECTION----------*/
 
-.opportunities-section {
+.opportunities-section, .educational-section {
   grid-area: section2;
   display: flex;
   align-items: center;
@@ -155,7 +154,7 @@ body {
   background-color: #eadbbc;
 }
 
-.opportunities-section p {
+.opportunities-section p, .educational-section p {
   color: #000000;
   font-weight: 500;
   margin: 3rem;
@@ -165,48 +164,22 @@ body {
 
 .media-section {
   grid-area: section3;
-  display: flex;
-  align-items: center;
-  opacity: 0.96;
-  font-size: 2rem;
-  padding: 2rem;
-  border-radius: 0.3rem;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.media-section p {
-  color: #f3f3f3;
-  font-weight: 500;
-  margin: 3rem;
 }
 
 /*---------HOME: EDUCATIONAL SECTION----------*/
 
 .educational-section {
   grid-area: section4;
-  display: flex;
-  align-items: center;
-  opacity: 0.96;
-  font-size: 2rem;
-  padding: 2rem;
-  border-radius: 0.3rem;
-  text-align: center;
-  background-color: #eadbbc;
 }
 
-.educational-section p {
-  color: #000000;
-  font-weight: 500;
-  margin: 3rem;
-}
+/*--------------------------------------------*/
 
 /* Buttons styling */
 .donate-button,
 .opportunities-button,
 .media-button,
 .educational-button {
-  width: 25%;
+  width: 30%;
   height: auto;
   font-size: 1.6rem;
   padding: 1rem;
@@ -453,7 +426,7 @@ body {
   .opportunities-button,
   .media-button,
   .educational-button {
-    width: 50%;
+    width: 35%;
     font-size: 1.7rem;
     margin-top: 1rem;
   }
@@ -567,6 +540,6 @@ body {
   .media-button,
   .educational-button {
     width: 50%;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 }
