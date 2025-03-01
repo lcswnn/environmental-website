@@ -11,7 +11,6 @@ html {
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: "DM Sans", "Roboto", sans-serif;
-
 }
 
 body {
@@ -67,7 +66,6 @@ body {
   grid-area: logo;
   height: auto;
 }
-
 
 .nav {
   grid-area: navbar;
@@ -129,16 +127,20 @@ body {
   grid-area: section1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
     "one two three"
-    "four five six"
-    "seven eight nine";
+    "four five six";
   gap: 1rem;
   padding: 5px;
 }
 
-.wwf, .greenpeace, .greenpeace2 {
+.wwf,
+.greenpeace,
+.conservancy,
+.oceana,
+.forest,
+.lakes {
   font-size: 1.5rem;
   font-weight: 550;
   color: #000000;
@@ -157,11 +159,28 @@ body {
   grid-area: two;
 }
 
-.greenpeace2 {
+.conservancy {
   grid-area: three;
 }
 
-.wwf a, .greenpeace a, .greenpeace2 a {
+.oceana {
+  grid-area: four;
+}
+
+.forest {
+  grid-area: five;
+}
+
+.lakes {
+  grid-area: six;
+}
+
+.wwf a,
+.greenpeace a,
+.conservancy a,
+.oceana a,
+.forest a,
+.lakes a {
   font-size: 1.7rem;
 }
 
@@ -608,5 +627,30 @@ body {
   .educational-button {
     width: 50%;
     font-size: 0.9rem;
+  }
+
+  .wwf,
+  .greenpeace,
+  .conservancy,
+  .oceana,
+  .forest,
+  .lakes {
+    font-size: 1.1rem;
+    font-weight: 550;
+    color: #000000;
+    background-color: #eadbbc;
+    opacity: 0.9;
+    border-radius: 0.3rem;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .wwf a,
+  .greenpeace a,
+  .conservancy a,
+  .oceana a,
+  .forest a,
+  .lakes a {
+    font-size: 1.3rem;
   }
 }
