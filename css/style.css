@@ -105,7 +105,7 @@ body {
 
 .what {
   grid-area: what;
-  opacity: 0.96;
+  opacity: 0.9;
   font-size: 2rem;
   background-color: #eadbbc;
   padding: 2rem;
@@ -116,7 +116,7 @@ body {
 
 .how {
   grid-area: how;
-  opacity: 0.96;
+  opacity: 0.9;
   font-size: 2rem;
   background-color: #eadbbc;
   padding: 2rem;
@@ -138,36 +138,31 @@ body {
   padding: 5px;
 }
 
-.wwf {
-  grid-area: one;
-  font-size: 1.7rem;
-  font-weight: 800;
+.wwf, .greenpeace, .greenpeace2 {
+  font-size: 1.5rem;
+  font-weight: 550;
   color: #000000;
   background-color: #eadbbc;
+  opacity: 0.9;
   border-radius: 0.3rem;
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem;
+}
+
+.wwf {
+  grid-area: one;
 }
 
 .greenpeace {
   grid-area: two;
-  font-size: 1.7rem;
-  font-weight: 800;
-  color: #000000;
-  background-color: #eadbbc;
-  border-radius: 0.3rem;
-  text-align: center;
-  padding: 1.5rem;
 }
+
 .greenpeace2 {
   grid-area: three;
+}
+
+.wwf a, .greenpeace a, .greenpeace2 a {
   font-size: 1.7rem;
-  font-weight: 800;
-  color: #000000;
-  background-color: #eadbbc;
-  border-radius: 0.3rem;
-  text-align: center;
-  padding: 1.5rem;
 }
 
 /*---------HOME: DONATION SECTION----------*/
@@ -177,7 +172,7 @@ body {
   grid-area: section1;
   display: flex;
   align-items: center;
-  opacity: 0.96;
+  opacity: 0.9;
   font-size: 2rem;
   padding: 2rem;
   border-radius: 0.3rem;
@@ -198,7 +193,7 @@ body {
   grid-area: section2;
   display: flex;
   align-items: center;
-  opacity: 0.96;
+  opacity: 0.9;
   font-size: 2rem;
   padding: 2rem;
   border-radius: 0.3rem;
@@ -336,6 +331,21 @@ body {
       "section3"
       "section4"
       "footer";
+  }
+
+  .charity-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four"
+      "five"
+      "six"
+      "seven"
+      "eight"
+      "nine";
   }
 
   .title h1 {
