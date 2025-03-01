@@ -11,6 +11,7 @@ html {
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: "DM Sans", "Roboto", sans-serif;
+
 }
 
 body {
@@ -27,6 +28,9 @@ body {
     "footer footer";
   gap: 1rem;
   padding: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.3rem;
+  padding: 1.5rem;
 }
 
 .header-container {
@@ -41,7 +45,7 @@ body {
 .title h1 {
   grid-area: logo;
   font-family: "DM Sans", "Roboto", sans-serif;
-  font-weight: 600; /* Light weight to match the logo */
+  font-weight: 500; /* Light weight to match the logo */
   font-size: 6.5rem; /* Adjust size as needed */
   color: white; /* White text like the logo */
   text-align: center;
@@ -62,6 +66,41 @@ body {
 .logo {
   grid-area: logo;
   height: auto;
+}
+
+
+.nav {
+  grid-area: navbar;
+  background-color: #d4d4d4;
+  z-index: 1;
+  border-radius: 0.3rem;
+}
+
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1.4rem;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #569b1b;
+  font-weight: 550;
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
+}
+
+.nav ul li a:hover {
+  transition: all 0.3s ease;
+  background-color: #c0c0c0;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.nav ul li {
+  margin: 0 2rem;
 }
 
 .what {
@@ -86,38 +125,49 @@ body {
   font-weight: 500;
 }
 
-.nav {
-  grid-area: navbar;
-  background-color: #d4d4d4;
-  z-index: 1;
+.charity-list {
+  grid-area: section1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "one two three"
+    "four five six"
+    "seven eight nine";
+  gap: 1rem;
+  padding: 5px;
 }
 
-.nav ul {
-  display: flex;
-  list-style-type: none;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 1.4rem;
+.wwf {
+  grid-area: one;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #000000;
+  background-color: #eadbbc;
   border-radius: 0.3rem;
+  text-align: center;
+  padding: 1.5rem;
 }
 
-.nav ul li a {
-  text-decoration: none;
-  color: #569b1b;
-  font-weight: 550;
-  font-size: 1.4rem;
-  padding: 0.5rem 1rem;
+.greenpeace {
+  grid-area: two;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #000000;
+  background-color: #eadbbc;
+  border-radius: 0.3rem;
+  text-align: center;
+  padding: 1.5rem;
 }
-
-.nav ul li a:hover {
-  transition: all 0.3s ease;
-  background-color: #c0c0c0;
-  border-radius: 2rem;
-  cursor: pointer;
-}
-
-.nav ul li {
-  margin: 0 2rem;
+.greenpeace2 {
+  grid-area: three;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #000000;
+  background-color: #eadbbc;
+  border-radius: 0.3rem;
+  text-align: center;
+  padding: 1.5rem;
 }
 
 /*---------HOME: DONATION SECTION----------*/
@@ -132,7 +182,6 @@ body {
   padding: 2rem;
   border-radius: 0.3rem;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .donation-section p,
@@ -300,6 +349,7 @@ body {
     padding: 0;
     background-color: #d4d4d4;
     z-index: 1000;
+    border-radius: 0.3rem;
   }
 
   .hamburger-menu {
@@ -311,13 +361,12 @@ body {
 
   .nav ul#nav-menu {
     position: absolute;
-    top: 100%;
+    top: 90%;
     left: 0;
     width: 100%;
     margin: 0;
     padding: 0;
     background-color: #d4d4d4;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex-direction: column;
     display: flex;
     max-height: 0;
@@ -326,6 +375,8 @@ body {
     visibility: hidden;
     transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
     pointer-events: none;
+    border-radius: 0.3rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
   }
 
   .nav ul#nav-menu.show {
@@ -467,13 +518,12 @@ body {
 
   .nav ul#nav-menu {
     position: absolute;
-    top: 100%;
+    top: 90%;
     left: 0;
     width: 100%;
     margin: 0;
     padding: 0;
     background-color: #d4d4d4;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     flex-direction: column;
     display: flex;
     max-height: 0;
@@ -482,6 +532,8 @@ body {
     visibility: hidden;
     transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
     pointer-events: none;
+    border-radius: 0.3rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
   }
 
   .nav ul#nav-menu.show {
