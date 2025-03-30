@@ -17,19 +17,18 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "logo logo"
     "navbar navbar"
+    "logo logo"
     "what how"
     "section1 section1"
     "section2 section2"
     "section3 section3"
     "section4 section4"
     "footer footer";
-  gap: 1rem;
-  padding: 5px;
+  gap: 1.5rem;
+  padding: 1.5rem;
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 0.3rem;
-  padding: 1.5rem;
 }
 
 .header-container {
@@ -38,40 +37,59 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh; /* Adjust this value to control vertical spacing */
+  height: 50vh;
 }
 
 .title h1 {
-  grid-area: logo;
   font-family: "DM Sans", "Roboto", sans-serif;
-  font-weight: 500; /* Light weight to match the logo */
-  font-size: 5.5rem; /* Adjust size as needed */
-  color: white; /* White text like the logo */
+  font-weight: 500;
+  font-size: 7.5rem;
+  color: white;
   text-align: center;
-  letter-spacing: 2px; /* Add some letter spacing to match the logo's look */
-  width: 100%; /* Make it take full width of container */
-  margin: 1.5rem 0; /* Center vertically with margin */
-  padding: 1rem 0; /* Add some padding but keep it 0 on the sides */
-  position: relative; /* For positioning the green accent */
-  left: 0; /* Reset any potential positioning */
-  right: 0;
-}
-
-.parallax-logo img {
+  letter-spacing: 2px;
   width: 100%;
-  height: auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  letter-spacing: 4.5px;
 }
 
 .logo {
   grid-area: logo;
-  height: auto;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.parallax {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+}
+
+.parallax-logo {
+  text-align: center;
+  width: 50%;
+  font-size: 5rem;
+  color: white;
+  font-weight: 500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .nav {
   grid-area: navbar;
-  background-color: #d4d4d4;
-  z-index: 1;
+  z-index: 1000;
   border-radius: 0.3rem;
+  padding: 0.8rem 0;
 }
 
 .nav ul {
@@ -84,21 +102,26 @@ body {
 
 .nav ul li a {
   text-decoration: none;
-  color: #569b1b;
-  font-weight: 550;
-  font-size: 1.4rem;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.5rem;
   padding: 0.5rem 1rem;
 }
 
 .nav ul li a:hover {
-  transition: all 0.3s ease;
-  background-color: #c0c0c0;
+  transition: all 0.5s ease;
+  background-color: #569b1b;
   border-radius: 2rem;
   cursor: pointer;
 }
 
 .nav ul li {
   margin: 0 2rem;
+}
+
+.green-text {
+  color: #569b1b;
+  font-weight: bold;
 }
 
 .what {
@@ -110,6 +133,7 @@ body {
   border-radius: 0.3rem;
   text-align: center;
   font-weight: 500;
+  box-shadow: #000000 0px 0px 10px 0px;
 }
 
 .how {
@@ -121,6 +145,18 @@ body {
   border-radius: 0.3rem;
   text-align: center;
   font-weight: 500;
+  box-shadow: #000000 0px 0px 10px 0px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.9s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .charity-list {
@@ -149,6 +185,18 @@ body {
   border-radius: 0.3rem;
   text-align: center;
   padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: #000000 0px 0px 10px 0px;
+}
+
+.wwf:hover,
+.greenpeace:hover,
+.conservancy:hover,
+.oceana:hover,
+.forest:hover,
+.lakes:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
 }
 
 .wwf {
@@ -185,6 +233,13 @@ body {
   font-weight: 700;
 }
 
+.img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
 /*---------HOME: DONATION SECTION----------*/
 
 .donation-section,
@@ -219,6 +274,7 @@ body {
   border-radius: 0.3rem;
   text-align: center;
   background-color: #eadbbc;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
 .opportunities-section p,
@@ -238,6 +294,7 @@ body {
 
 .educational-section {
   grid-area: section4;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
 /*--------------------------------------------*/
@@ -259,6 +316,7 @@ body {
   text-decoration: none;
   font-weight: 500;
   display: inline-block;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
 .donate-button:hover,
@@ -278,6 +336,7 @@ body {
   height: auto;
   border-radius: 0.5rem;
 }
+
 /*----- Start Parallax -----*/
 .parallax {
   height: 50vh;
@@ -304,7 +363,8 @@ body {
   cursor: pointer;
   padding: 15px;
   z-index: 10;
-  position: absolute;
+  position: relative;
+  margin: 0 auto;
 }
 
 .bar1,
@@ -342,8 +402,8 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas:
-      "logo"
       "navbar"
+      "logo"
       "what"
       "how"
       "section1"
@@ -351,6 +411,10 @@ body {
       "section3"
       "section4"
       "footer";
+  }
+
+  .parallax-logo {
+    width: 70%;
   }
 
   .charity-list {
@@ -372,14 +436,20 @@ body {
     font-size: 3.5rem;
   }
 
+  .logo {
+    grid-area: logo;
+    padding: 2rem;
+  }
+
   .nav {
     position: relative;
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #d4d4d4;
+    background-color: rgba(212, 212, 212);
     z-index: 1000;
     border-radius: 0.3rem;
+    text-align: center;
   }
 
   .hamburger-menu {
@@ -387,16 +457,27 @@ body {
     margin: 10px auto;
     padding: 10px;
     position: relative;
+    /* Center it within the nav */
+    left: auto;
+    right: auto;
+  }
+
+  .nav ul li a {
+    text-decoration: none;
+    color: #569b1b;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
   }
 
   .nav ul#nav-menu {
     position: absolute;
-    top: 90%;
+    top: 100%;
     left: 0;
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #d4d4d4;
+    background-color: rgba(212, 212, 212);
     flex-direction: column;
     display: flex;
     max-height: 0;
@@ -515,6 +596,7 @@ body {
     width: 35%;
     font-size: 1.7rem;
     margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -534,11 +616,12 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #d4d4d4;
+    background-color: rgba(212, 212, 212);
     z-index: 1000;
+    text-align: center;
   }
 
-  /* Style the hamburger container */
+  /* Match the styles from the larger breakpoint */
   .hamburger-menu {
     display: block;
     margin: 10px auto;
@@ -548,12 +631,12 @@ body {
 
   .nav ul#nav-menu {
     position: absolute;
-    top: 90%;
+    top: 100%;
     left: 0;
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #d4d4d4;
+    background-color: rgba(212, 212, 212, 0.9);
     flex-direction: column;
     display: flex;
     max-height: 0;
@@ -584,6 +667,11 @@ body {
     font-size: 1rem;
     padding: 15px;
     align-items: center;
+  }
+
+  .parallax-logo {
+    height: auto;
+    width: 70%;
   }
 
   .what {
@@ -628,6 +716,7 @@ body {
   .educational-button {
     width: 50%;
     font-size: 0.9rem;
+    margin-bottom: 1rem;
   }
 
   .wwf,
