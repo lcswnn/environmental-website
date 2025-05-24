@@ -1,8 +1,17 @@
+/*--------------COLORS-------------*/
+:root {
+  --green: #569b1b;
+  --light-green: #6aba24;
+  --tan: #eadbbc;
+  --white: #ffffff;
+  --black: #000000;
+  --border-radius: 0.4rem;
+}
 /*----------------------------------*/
-html,
+
+html, 
 body {
   margin: 0;
-  overflow-x: hidden;
 }
 
 html {
@@ -13,6 +22,17 @@ html {
   font-family: "DM Sans", "Roboto", sans-serif;
 }
 
+html::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
 body {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -21,14 +41,13 @@ body {
     "logo logo"
     "what how"
     "section1 section1"
+    "side1 side2"
     "section2 section2"
     "section3 section3"
     "section4 section4"
     "footer footer";
   gap: 1.5rem;
   padding: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 0.3rem;
 }
 
 .header-container {
@@ -43,13 +62,12 @@ body {
 .title h1 {
   font-family: "DM Sans", "Roboto", sans-serif;
   font-weight: 500;
-  font-size: 7.5rem;
-  color: white;
+  font-size: 7rem;
+  color: var(--white);
   text-align: center;
   letter-spacing: 2px;
   width: 100%;
   margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,7 +98,7 @@ body {
   text-align: center;
   width: 50%;
   font-size: 5rem;
-  color: white;
+  color: var(--white);
   font-weight: 500;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -88,7 +106,7 @@ body {
 .nav {
   grid-area: navbar;
   z-index: 1000;
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius);
   padding: 0.8rem 0;
 }
 
@@ -102,15 +120,15 @@ body {
 
 .nav ul li a {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--white);
   font-weight: bold;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
 }
 
-.nav ul li a:hover {
-  transition: all 0.5s ease;
-  background-color: #569b1b;
+.nav ul li a:hover  {
+  transition: all 0.4s ease;
+  background-color: var(--green);
   border-radius: 2rem;
   cursor: pointer;
 }
@@ -120,7 +138,7 @@ body {
 }
 
 .green-text {
-  color: #569b1b;
+  color: var(--green);
   font-weight: bold;
 }
 
@@ -128,24 +146,24 @@ body {
   grid-area: what;
   opacity: 0.9;
   font-size: 2rem;
-  background-color: #eadbbc;
+  background-color: var(--tan);
   padding: 2rem;
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius);
   text-align: center;
   font-weight: 500;
-  box-shadow: #000000 0px 0px 10px 0px;
+  box-shadow: var(--black) 0px 0px 10px 0px;
 }
 
 .how {
   grid-area: how;
   opacity: 0.9;
   font-size: 2rem;
-  background-color: #eadbbc;
+  background-color: var(--tan);
   padding: 2rem;
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius);
   text-align: center;
   font-weight: 500;
-  box-shadow: #000000 0px 0px 10px 0px;
+  box-shadow: var(--black) 0px 0px 10px 0px;
 }
 
 .fade-in {
@@ -171,6 +189,36 @@ body {
   padding: 5px;
 }
 
+.charity-button {
+  width: 50%;
+  height: auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--green);
+  border: none;
+  font-family: "DM Sans";
+  color: #f3f3f3;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+
+  /* across transition */
+  background: linear-gradient(to right, var(--light-green) 0%, var(--light-green) 50%, var(--green) 50%, var(--green) 100%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.3s ease;
+}
+
+.charity-button:hover {
+  background-position: 0 0;
+  cursor: pointer;
+}
+
+.wwf a {
+  font-size: 0.3rem;
+}
+
 .wwf,
 .greenpeace,
 .conservancy,
@@ -179,14 +227,13 @@ body {
 .lakes {
   font-size: 1.5rem;
   font-weight: 550;
-  color: #000000;
-  background-color: #eadbbc;
-  opacity: 0.9;
-  border-radius: 0.3rem;
+  color: var(--black);
+  background-color: var(--tan);
+  border-radius: var(--border-radius);
   text-align: center;
   padding: 2rem;
   transition: all 0.3s ease;
-  box-shadow: #000000 0px 0px 10px 0px;
+  box-shadow: var(--black) 0px 0px 10px 0px;
 }
 
 .wwf:hover,
@@ -197,6 +244,7 @@ body {
 .lakes:hover {
   transform: translateY(-7px);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .wwf {
@@ -229,14 +277,14 @@ body {
 .oceana a,
 .forest a,
 .lakes a {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 
 .img {
   width: 100%;
   height: auto;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
@@ -250,13 +298,13 @@ body {
   opacity: 0.9;
   font-size: 2rem;
   padding: 2rem;
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius);
   text-align: center;
 }
 
 .donation-section p,
 .media-section p {
-  color: #f3f3f3;
+  color: var(--white);
   font-weight: 500;
   margin: 3rem;
 }
@@ -271,15 +319,15 @@ body {
   opacity: 0.9;
   font-size: 2rem;
   padding: 2rem;
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius);
   text-align: center;
-  background-color: #eadbbc;
+  background-color: var(--tan);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
 .opportunities-section p,
 .educational-section p {
-  color: #000000;
+  color: var(--black);
   font-weight: 500;
   margin: 3rem;
 }
@@ -299,17 +347,214 @@ body {
 
 /*--------------------------------------------*/
 
+
+/*------------EDUCATIONAL PAGE-------------*/
+.featured-resource {
+  grid-area: section1;
+  font-weight: 550;
+  color: var(--black);
+  background-color: var(--tan);
+  border-radius: var(--border-radius);
+  text-align: center;
+  transition: all 0.6s ease;
+  box-shadow: var(--black) 0px 0px 10px 0px;
+}
+
+.featured-resource h2 {
+  color: var(--black);
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  font-size: 3rem;
+  border-bottom: 2px solid var(--black);
+  margin-top: 20px;
+}
+
+.featured-resource h3 {
+  font-size: 2.5rem;
+}
+
+.featured-resource h4 {
+  font-size: 1rem;
+  margin-top: 10px;
+  font-weight: lighter;
+  font-style: italic;
+  padding-bottom: 1rem;
+}
+
+.featured-resource p {
+  font-size: 1.6rem;
+  padding: 2rem;
+}
+
+.resource-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.resource-content img {
+  width: 40%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+.resource-content {
+  flex: 1;
+  padding: 1.7rem;
+  text-align: center;
+}
+
+.resource-content h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.resource-button {
+  width: 40%;
+  height: auto;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--green);
+  border: none;
+  font-family: "DM Sans";
+  color: #f3f3f3;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  /* across transition */
+  background: linear-gradient(to right, var(--light-green) 0%, var(--light-green) 50%, var(--green) 50%, var(--green) 100%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.3s ease;
+}
+
+.resource-button:hover {
+  background-position: 0 0;
+  cursor: pointer;
+}
+
+.more-resources1{
+  grid-area: side1;
+  font-weight: 550;
+  color: var(--black);
+  background-color: var(--tan);
+  border-radius: var(--border-radius);
+  text-align: center;
+  transition: all 0.6s ease;
+  box-shadow: var(--black) 0px 0px 10px 0px;
+}
+
+.more-resources2 {
+  grid-area: side2;
+  font-weight: 550;
+  color: var(--black);
+  background-color: var(--tan);
+  border-radius: var(--border-radius);
+  text-align: center;
+  transition: all 0.6s ease;
+  box-shadow: var(--black) 0px 0px 10px 0px;
+}
+
+.more-resources1 h2,
+.more-resources2 h2 {
+  font-size: 3rem;
+  border-bottom: 2px solid var(--black);
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.more-resources1 h3,
+.more-resources2 h3 {
+  font-size: 2rem;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.more-resources1 h4,
+.more-resources2 h4 {
+  font-size: 1.4rem;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.more-resources1 p,
+.more-resources2 p {
+  font-size: 1.4rem;
+  padding: 2rem
+}
+
+.media-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.media-content img {
+  width: 40%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+
+.media-content {
+  flex: 1;
+  padding: 1.7rem;
+  text-align: center;
+}
+
+.social-button {
+  width: 40%;
+  height: auto;
+  font-size: 1.6rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--green);
+  border: none;
+  font-family: "DM Sans";
+  color: #f3f3f3;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  /* across transition */
+  background: linear-gradient(to right, var(--light-green) 0%, var(--light-green) 50%, var(--green) 50%, var(--green) 100%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.3s ease;
+}
+
+.social-button:hover {
+  background-position: 0 0;
+  cursor: pointer;
+}
+
+.featured-resource:hover,
+.more-resources1:hover,
+.more-resources2:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+
+/*--------------------------------------------*/
+
 /* Buttons styling */
 .donate-button,
 .opportunities-button,
 .media-button,
 .educational-button {
-  width: 30%;
+  width: 40%;
   height: auto;
   font-size: 1.6rem;
   padding: 1rem;
   border-radius: 1rem;
-  background-color: #569b1b;
+  background-color: var(--green);
   border: none;
   font-family: "DM Sans";
   color: #f3f3f3;
@@ -317,13 +562,19 @@ body {
   font-weight: 500;
   display: inline-block;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+
+  /* across transition */
+  background: linear-gradient(to right, var(--light-green) 0%, var(--light-green) 50%, var(--green) 50%, var(--green) 100%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.3s ease;
 }
 
 .donate-button:hover,
 .opportunities-button:hover,
 .media-button:hover,
 .educational-button:hover {
-  background-color: #6aba24;
+  background-position: 0 0;
   cursor: pointer;
 }
 
@@ -372,7 +623,7 @@ body {
 .bar3 {
   width: 28px;
   height: 4px;
-  background-color: #569b1b;
+  background-color: var(--green);
   margin: 6px 0;
   transition: 0.4s;
   border-radius: 3px;
@@ -407,6 +658,8 @@ body {
       "what"
       "how"
       "section1"
+      "side1"
+      "side2"
       "section2"
       "section3"
       "section4"
@@ -433,7 +686,7 @@ body {
   }
 
   .title h1 {
-    font-size: 3.5rem;
+    font-size: 5rem;
   }
 
   .logo {
@@ -464,7 +717,7 @@ body {
 
   .nav ul li a {
     text-decoration: none;
-    color: #569b1b;
+    color: var(--green);
     font-weight: bold;
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
@@ -486,7 +739,7 @@ body {
     visibility: hidden;
     transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
     pointer-events: none;
-    border-radius: 0.3rem;
+    border-radius: var(--border-radius);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
   }
 
@@ -598,6 +851,64 @@ body {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+
+  .resource-container {
+    flex-direction: column;
+  }
+  
+  .resource-content img {
+    flex: 0 0 100%;
+    width: 65%;
+  }
+
+  .featured-resource h2 {
+    font-size: 2.2rem;
+  }
+
+  .featured-resource h3 {
+    font-size: 1.7rem;
+  }
+
+  .featured-resource p {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  .resource-button {
+    width: 40%;
+    height: auto;
+    font-size: 1.3rem;
+    padding: 1rem;
+    
+  }
+
+  .more-resources1 h2,
+  .more-resources2 h2 {
+    font-size: 3rem;
+    border-bottom: 2px solid var(--black);
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .more-resources1 h3,
+  .more-resources2 h3 {
+    font-size: 2rem;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .more-resources1 h4,
+  .more-resources2 h4 {
+    font-size: 1.4rem;
+    font-weight: lighter;
+    font-style: italic;
+  }
+
+  .more-resources1 p,
+  .more-resources2 p {
+    font-size: 1.4rem;
+    padding: 2rem
+  }
 }
 
 /* Small phones */
@@ -608,7 +919,8 @@ body {
   }
 
   .title h1 {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Increase from current 2rem */
+    line-height: 1.1; /* Tighten line spacing */
   }
 
   .nav {
@@ -636,7 +948,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: rgba(212, 212, 212, 0.9);
+    background-color: rgba(212, 212, 212);
     flex-direction: column;
     display: flex;
     max-height: 0;
@@ -645,7 +957,7 @@ body {
     visibility: hidden;
     transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
     pointer-events: none;
-    border-radius: 0.3rem;
+    border-radius: var(--border-radius);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
   }
 
@@ -727,10 +1039,10 @@ body {
   .lakes {
     font-size: 1.1rem;
     font-weight: 550;
-    color: #000000;
-    background-color: #eadbbc;
+    color: var(--black);
+    background-color: var(--tan);
     opacity: 0.9;
-    border-radius: 0.3rem;
+    border-radius: var(--border-radius);
     text-align: center;
     padding: 2rem;
   }
@@ -742,5 +1054,66 @@ body {
   .forest a,
   .lakes a {
     font-size: 1.3rem;
+  }
+
+  .resource-container {
+    flex-direction: column;
+  }
+  
+  .resource-content img {
+    flex: 0 0 100%;
+    width: 80%;
+  }
+
+  .featured-resource h2 {
+    font-size: 1.9rem;
+  }
+
+  .featured-resource h3 {
+    font-size: 1.4rem;
+  }
+
+  .featured-resource h4 {
+    font-size: 0.8rem;
+  }
+
+  .featured-resource p {
+    font-size: 1rem;
+    padding: 0rem;
+  }
+
+  .resource-button {
+    width: 40%;
+    height: auto;
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  .more-resources1 h2,
+  .more-resources2 h2 {
+    font-size: 1.7rem;
+    border-bottom: 2px solid var(--black);
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .more-resources1 h3,
+  .more-resources2 h3 {
+    font-size: 1.4rem;
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .more-resources1 h4,
+  .more-resources2 h4 {
+    font-size: 0.8rem;
+    font-weight: lighter;
+    font-style: italic;
+  }
+
+  .more-resources1 p,
+  .more-resources2 p {
+    font-size: 1rem;
+    padding: 0rem;
   }
 }
