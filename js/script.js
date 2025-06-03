@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Fix for fade-in effect
   const appearOptions = {
-    threshold: 0.2,
+    threshold: 0.1,
   };
 
   const appearOnScroll = new IntersectionObserver(function (
