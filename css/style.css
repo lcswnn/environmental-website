@@ -194,55 +194,6 @@ body {
   transform: translateY(0);
 }
 
-.charity-list {
-  grid-area: section1;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr); /* Keep this for equal row heights */
-  grid-template-areas:
-    "one two three"
-    "four five six";
-  gap: 1rem;
-  padding: 5px;
-  align-items: stretch; /* Add this to make all cards in each row the same height */
-}
-
-.charity-button {
-  width: 50%;
-  height: auto;
-  padding: 1rem;
-  border-radius: 1rem;
-  background-color: var(--green);
-  border: none;
-  font-family: "DM Sans";
-  color: #f3f3f3;
-  text-decoration: none;
-  font-weight: 500;
-  display: block;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-
-  /* Grid alignment properties */
-  justify-self: center; /* Changed from align-self to justify-self for horizontal centering */
-  margin-top: auto; /* Push to bottom of the grid cell */
-
-  /* Gradient transition effect */
-  background: linear-gradient(
-    to right,
-    var(--light-green) 0%,
-    var(--light-green) 50%,
-    var(--green) 50%,
-    var(--green) 100%
-  );
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  transition: background-position 0.3s ease;
-}
-
-.charity-button:hover {
-  background-position: 0 0;
-  cursor: pointer;
-}
-
 .wwf,
 .greenpeace,
 .conservancy,
@@ -250,8 +201,8 @@ body {
 .forest,
 .lakes {
   display: grid;
-  grid-template-rows: auto auto auto 1fr auto;
-  gap: 10px;
+  grid-template-rows: auto auto 1fr auto; 
+  gap: 15px; 
   font-size: 1.5rem;
   font-weight: 550;
   color: var(--black);
@@ -260,6 +211,7 @@ body {
   padding: 2rem;
   transition: all 0.3s ease;
   box-shadow: var(--black) 0px 0px 10px 0px;
+  min-height: 0; 
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -284,6 +236,82 @@ body {
   transform: translateY(-7px);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+}
+
+.wwf h2,
+.greenpeace h2,
+.conservancy h2,
+.oceana h2,
+.forest h2,
+.lakes h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  grid-row: 1; 
+  margin-bottom: 10px;
+}
+
+
+.wwf p,
+.greenpeace p,
+.conservancy p,
+.oceana p,
+.forest p,
+.lakes p {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  grid-row: 2; 
+}
+
+
+.charity-button {
+  width: 60%;
+  height: auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--green);
+  border: none;
+  font-family: "DM Sans";
+  color: #f3f3f3;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  grid-row: 4;
+  justify-self: center; 
+  align-self: end; 
+  /* across transition */
+  background: linear-gradient(
+    to right,
+    var(--light-green) 0%,
+    var(--light-green) 50%,
+    var(--green) 50%,
+    var(--green) 100%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.3s ease;
+}
+
+.charity-button:hover {
+  background-position: 0 0;
+  cursor: pointer;
+}
+
+.charity-list {
+  grid-area: section1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "one two three"
+    "four five six";
+  gap: 1rem;
+  padding: 5px;
+  align-items: stretch;
 }
 
 .wwf {
