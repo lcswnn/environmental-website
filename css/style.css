@@ -1223,12 +1223,24 @@ body {
     font-size: 1.1rem;
     font-weight: 550;
     color: var(--black);
-    background-color: var(--tan);
     opacity: 0.9;
     border-radius: var(--border-radius);
     text-align: center;
     padding: 2rem;
   }
+
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .wwf,
+  .greenpeace,
+  .conservancy,
+  .oceana,
+  .forest,
+  .lakes {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
 
   .wwf a,
   .greenpeace a,
