@@ -824,8 +824,9 @@ body {
 /*---------MOBILE SCREEN SIZES----------*/
 @media screen and (max-width: 1200px) {
   html {
+    background-attachment: scroll;
+    background-position: center center;
     background-size: cover;
-    background-attachment: fixed;
   }
 
   body {
@@ -1130,8 +1131,9 @@ body {
 /*---------SMALL PHONES----------*/
 @media screen and (max-width: 550px) {
   html {
+    background-attachment: scroll;
+    background-position: center center;
     background-size: cover;
-    background-attachment: fixed;
   }
 
   .title h1 {
