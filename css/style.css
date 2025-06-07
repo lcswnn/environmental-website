@@ -430,7 +430,7 @@ body {
 
 /*------------EDUCATIONAL PAGE-------------*/
 .featured-resource {
-  grid-area: section1;
+  grid-area: section2;
   font-weight: 550;
   color: var(--black);
   border-radius: var(--border-radius);
@@ -624,7 +624,7 @@ body {
 }
 
 .social-media-section {
-  grid-area: side1;
+  grid-area: section1;
   grid-column: 1 / -1;
   font-weight: 550;
   color: var(--black);
