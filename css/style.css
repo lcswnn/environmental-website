@@ -373,6 +373,11 @@ body {
   }
 }
 
+.opportunities-section img,
+.educational-section img {
+  margin-top: 10px;
+}
+
 .opportunities-section p,
 .educational-section p {
   color: var(--black);
