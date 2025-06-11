@@ -201,8 +201,8 @@ body {
 .forest,
 .lakes {
   display: grid;
-  grid-template-rows: auto auto 1fr auto; 
-  gap: 15px; 
+  grid-template-rows: auto auto 1fr auto;
+  gap: 15px;
   font-size: 1.5rem;
   font-weight: 550;
   color: var(--black);
@@ -211,7 +211,7 @@ body {
   padding: 2rem;
   transition: all 0.3s ease;
   box-shadow: var(--black) 0px 0px 10px 0px;
-  min-height: 0; 
+  min-height: 0;
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -247,10 +247,9 @@ body {
   margin: 0;
   font-size: 2rem;
   font-weight: 700;
-  grid-row: 1; 
+  grid-row: 1;
   margin-bottom: 10px;
 }
-
 
 .wwf p,
 .greenpeace p,
@@ -261,9 +260,8 @@ body {
   margin: 0;
   font-size: 1.3rem;
   line-height: 1.5;
-  grid-row: 2; 
+  grid-row: 2;
 }
-
 
 .charity-button {
   width: 60%;
@@ -281,8 +279,8 @@ body {
   align-items: center;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
   grid-row: 4;
-  justify-self: center; 
-  align-self: end; 
+  justify-self: center;
+  align-self: end;
   /* across transition */
   background: linear-gradient(
     to right,
@@ -821,8 +819,6 @@ body {
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
-
-
 /*---------MEDIA SECTION----------*/
 
 .media-container {
@@ -840,7 +836,7 @@ body {
 .media-item {
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   position: relative;
   opacity: 0;
   transform: translateY(50px);
@@ -849,7 +845,7 @@ body {
 
 .media-item:hover {
   transform: translateY(-7px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .media-item img {
@@ -874,7 +870,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
   color: white;
   padding: 20px;
   transform: translateY(100%);
@@ -882,7 +878,7 @@ body {
 }
 
 .media-item:hover .overlay {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .modal {
@@ -916,7 +912,7 @@ body {
 .modal-text {
   padding: 20px;
   background: white;
-  font-family: "DM Sans";;
+  font-family: "DM Sans";
 }
 
 .modal-text h3 {
@@ -1274,11 +1270,11 @@ body {
   .media-item.wide {
     grid-column: span 1;
   }
-  
+
   .header h1 {
     font-size: 2rem;
   }
-  
+
   .media-container {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -1288,11 +1284,11 @@ body {
     max-width: 95%;
     margin: 10px auto;
   }
-  
+
   .modal-image {
     max-height: 50vh;
   }
-  
+
   .modal-text {
     padding: 15px;
   }
@@ -1435,17 +1431,17 @@ body {
   }
 
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .wwf,
-  .greenpeace,
-  .conservancy,
-  .oceana,
-  .forest,
-  .lakes {
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.5);
+    .wwf,
+    .greenpeace,
+    .conservancy,
+    .oceana,
+    .forest,
+    .lakes {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.5);
+    }
   }
-}
 
   .wwf a,
   .greenpeace a,
