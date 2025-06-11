@@ -21,7 +21,7 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: "DM Sans", "Roboto", sans-serif;
+  font-family: "Outfit", "Roboto", sans-serif;
 }
 
 html::before {
@@ -62,7 +62,7 @@ body {
 }
 
 .title h1 {
-  font-family: "DM Sans", "Roboto", sans-serif;
+  font-family: "Outfit", "Roboto", sans-serif;
   font-weight: 500;
   font-size: 7rem;
   color: var(--white);
@@ -285,7 +285,7 @@ body {
   border-radius: 1rem;
   background-color: var(--green);
   border: none;
-  font-family: "DM Sans";
+  font-family: "Outfit", "Roboto", "sans serif";
   color: #f3f3f3;
   text-decoration: none;
   font-weight: 500;
@@ -743,7 +743,7 @@ body {
   border-radius: 1rem;
   background-color: var(--green);
   border: none;
-  font-family: "DM Sans";
+  font-family: "Outfit", "Roboto", "sans serif";
   color: #f3f3f3;
   text-decoration: none;
   font-weight: 500;
@@ -883,7 +883,7 @@ body {
 }
 
 .media-item .overlay {
-  font-family: "DM Sans", "Roboto", sans-serif;
+  font-family: "Outfit", "Roboto", "sans serif";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -930,7 +930,7 @@ body {
 .modal-text {
   padding: 20px;
   background: white;
-  font-family: "DM Sans";
+  font-family: "Outfit", "Roboto", "sans serif";
 }
 
 .modal-text h3 {
