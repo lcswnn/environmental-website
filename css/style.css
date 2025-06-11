@@ -7,6 +7,7 @@
   --black: #000000;
   --border-radius: 0.4rem;
   --blue: #377e8e;
+  --text-color: #3a3a3a;
 }
 /*----------------------------------*/
 
@@ -57,7 +58,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 90vh;
 }
 
 .title h1 {
@@ -106,9 +107,21 @@ body {
 
 .nav {
   grid-area: navbar;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  border-radius: var(--border-radius);
-  padding: 0.8rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .nav {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.4);
+  }
 }
 
 .nav ul {
@@ -119,9 +132,13 @@ body {
   padding: 1.4rem;
 }
 
+.nav ul li {
+  margin: 0 2.5vw;
+}
+
 .nav ul li a {
   text-decoration: none;
-  color: var(--white);
+  color: var(--black);
   font-weight: bold;
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
@@ -130,12 +147,9 @@ body {
 .nav ul li a:hover {
   transition: all 0.4s ease;
   background-color: var(--green);
+  color: var(--white);
   border-radius: 2rem;
   cursor: pointer;
-}
-
-.nav ul li {
-  margin: 0 2rem;
 }
 
 .green-text {
