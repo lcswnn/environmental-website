@@ -48,3 +48,34 @@ document.addEventListener("DOMContentLoaded", function () {
     appearOnScroll.observe(fader);
   });
 });
+
+function openModal(img) {
+  const modal = document.getElementById('imageModal');
+  const modalImg = document.getElementById('modalImage');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDescription = document.getElementById('modalDescription');
+  const modalCredit = document.getElementById('modalCredit');
+  
+  modal.style.display = 'block';
+  modalImg.src = img.src;
+  modalImg.alt = img.alt;
+  modalTitle.textContent = img.getAttribute('data-title');
+  modalDescription.textContent = img.getAttribute('data-description');
+  modalCredit.innerHTML = img.getAttribute('data-credit');
+  
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(event) {
+  if (!event || event.target.classList.contains('modal') || event.target.classList.contains('close')) {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+}
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+});
