@@ -72,7 +72,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
   letter-spacing: 4.5px;
 }
 
@@ -153,6 +153,12 @@ body {
   text-align: center;
   font-weight: 500;
   box-shadow: var(--black) 0px 0px 10px 0px;
+  transition: all 0.3s ease;
+}
+
+.what:hover {
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -173,6 +179,11 @@ body {
   text-align: center;
   font-weight: 500;
   box-shadow: var(--black) 0px 0px 10px 0px;
+}
+
+.how:hover {
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -388,6 +399,13 @@ body {
   text-align: center;
   background-color: var(--tan);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.opportunities-section:hover,
+.educational-section:hover {
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -402,6 +420,12 @@ body {
 .opportunities-section img,
 .educational-section img {
   margin-top: 10px;
+}
+
+.opportunities-section img:hover,
+.educational-section img:hover {
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .opportunities-section p,
@@ -763,6 +787,15 @@ body {
   width: 40%;
   height: auto;
   border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.donation-section img:hover,
+.opportunities-section img:hover,
+.media-section img:hover,
+.educational-section img:hover {
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 /*----- Start Parallax -----*/
@@ -822,6 +855,7 @@ body {
 /*---------MEDIA SECTION----------*/
 
 .media-container {
+  grid-area: section1;
   width: 100%;
   max-width: 1900px;
   margin: 0 auto;
@@ -957,6 +991,58 @@ body {
   color: var(--green);
   text-decoration: underline;
   font-weight: bold;
+}
+
+/*-------------------About Page---------------------*/
+
+.socials-container {
+  grid-area: section1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.socials-container ul {
+  list-style: none;
+  margin: 0;
+}
+
+.socials-container li {
+  margin: 10px 0;
+  margin-bottom: 30px;
+}
+
+.socials-container a {
+  text-decoration: none;
+  padding: 15px 20px;
+  display: inline-block;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-size: 2rem;
+  color: var(--black);
+  width: 400px;
+  box-sizing: border-box;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .socials-container a {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+.socials-container a:hover {
+  color: var(--green);
+  transform: translateY(-7px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 /*---------------------------------------------------*/
@@ -1291,6 +1377,48 @@ body {
 
   .modal-text {
     padding: 15px;
+  }
+
+  .socials-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+  }
+
+  .socials-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .socials-container li {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .socials-container a {
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    color: var(--black);
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .socials-container a:hover {
+    background-color: var(--green);
+    color: white;
   }
 }
 
