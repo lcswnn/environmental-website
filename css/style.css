@@ -156,11 +156,6 @@ body {
   transition: all 0.3s ease;
 }
 
-.what:hover {
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .what {
     -webkit-backdrop-filter: blur(10px);
@@ -179,11 +174,6 @@ body {
   text-align: center;
   font-weight: 500;
   box-shadow: var(--black) 0px 0px 10px 0px;
-}
-
-.how:hover {
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -402,12 +392,6 @@ body {
   transition: all 0.3s ease;
 }
 
-.opportunities-section:hover,
-.educational-section:hover {
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .opportunities-section,
   .educational-section {
@@ -420,12 +404,6 @@ body {
 .opportunities-section img,
 .educational-section img {
   margin-top: 10px;
-}
-
-.opportunities-section img:hover,
-.educational-section img:hover {
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
 }
 
 .opportunities-section p,
@@ -787,14 +765,6 @@ body {
   width: 40%;
   height: auto;
   border-radius: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-.donation-section img:hover,
-.opportunities-section img:hover,
-.media-section img:hover,
-.educational-section img:hover {
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
