@@ -1029,6 +1029,46 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
+/*---------------VOLUNTEER SECTION-------------------*/
+.api-container {
+  grid-area: section1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--tan);
+  font-size: large;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .api-container {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+.api-container h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.api-container p {
+  color: var(--black);
+  font-weight: 500;
+  margin: 20px;
+}
+
+gmp-map {
+  grid-area: section1;
+  height: 700px;
+  width: 100%;
+  border-radius: var(--border-radius);
+}
+
+
 /*---------------------------------------------------*/
 
 /*---------MOBILE SCREEN SIZES----------*/

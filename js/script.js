@@ -83,3 +83,24 @@ document.addEventListener("keydown", function (event) {
     closeModal();
   }
 });
+
+// maps api
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: { lat: 40.12150192260742, lng: -100.45039367675781 },
+  });
+  
+  new google.maps.Marker({
+    position: { lat: 40.12150192260742, lng: -100.45039367675781 },
+    map: map,
+    title: "My location"
+  });
+}
+
+// Initialize map when page loads
+window.onload = function() {
+  if (typeof google !== 'undefined' && google.maps) {
+    initMap();
+  }
+};

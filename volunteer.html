@@ -1,3 +1,4 @@
+<!-- API Key: AIzaSyBnWtJ6hNUlgVPCrrWBgD53-oSCubHFPgc -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnWtJ6hNUlgVPCrrWBgD53-oSCubHFPgc&callback=console.debug&libraries=maps,marker&v=beta">
+    </script>
     <link rel="stylesheet" media="screen" href="css/style.css" />
     <title>Gateway to Green</title>
   </head>
@@ -30,6 +33,9 @@
         <h1>Volunteering Opportunities</h1>
       </div>
     </div>
+      <gmp-map center="40.12150192260742,-100.45039367675781" zoom="4" map-id="DEMO_MAP_ID">
+      <gmp-advanced-marker position="40.12150192260742,-100.45039367675781" title="My location"></gmp-advanced-marker>
+      </gmp-map>
 
     <script src="js/script.js"></script>
   </body>
