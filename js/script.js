@@ -84,23 +84,154 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-// maps api
-function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: { lat: 40.12150192260742, lng: -100.45039367675781 },
-  });
-  
-  new google.maps.Marker({
-    position: { lat: 40.12150192260742, lng: -100.45039367675781 },
-    map: map,
-    title: "My location"
+// Find opportunites near by
+let currentPage = 1;
+let totalResults = 0;
+let currentLocation = "";
+
+async function findOpportunities(pageUrl = null) {
+  const location = document.getElementById("location-input").value;
+
+  if (!pageUrl) {
+    currentLocation = location;
+    currentPage = 1;
+  }
+
+  try {
+    const url =
+      pageUrl ||
+      `https://www.volunteerconnector.org/api/search/?pc=${location}&md=&so=Proximity&se=`;
+
+    const response = await fetch(url, {
+      method: "GET",
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const data = await response.json();
+    const resultsContainer = document.getElementById("results");
+
+    totalResults = data.count;
+
+    if (data.results.length === 0) {
+      resultsContainer.innerHTML = "<p>No opportunities found.</p>";
+      return;
+    }
+
+    // Display results count
+    displayResultsInfo(data);
+
+    // Display opportunities
+    displayOpportunities(data.results);
+
+    // Display pagination controls
+    displayPaginationControls(data);
+  } catch (error) {
+    console.error("Error fetching opportunities:", error);
+    const resultsContainer = document.getElementById("results");
+    resultsContainer.innerHTML =
+      "<p>Error fetching opportunities. Please try again later.</p>";
+  }
+}
+
+function displayResultsInfo(data) {
+  const resultsContainer = document.getElementById("results");
+
+  // Remove existing results info if it exists
+  const existingInfo = document.getElementById("results-info");
+  if (existingInfo) {
+    existingInfo.remove();
+  }
+
+  const resultsInfo = document.createElement("div");
+  resultsInfo.id = "results-info";
+  resultsInfo.className = "results-info";
+  resultsInfo.innerHTML = `
+    <p><strong>Found ${data.count} opportunities for "${currentLocation}"</strong></p>
+  `;
+
+  resultsContainer.appendChild(resultsInfo);
+}
+
+function displayOpportunities(opportunities) {
+  const resultsContainer = document.getElementById("results");
+  const existingOpportunities = document.querySelectorAll(".opportunity");
+
+  existingOpportunities.forEach((opp) => opp.remove());
+  opportunities.forEach((opportunity) => {
+    const opportunityElement = document.createElement("div");
+    opportunityElement.className = "opportunity";
+    opportunityElement.innerHTML = `
+      <h3>${opportunity.title}</h3>
+      <p><strong>Organization:</strong> ${opportunity.organization.name}</p>
+      <p><strong>Duration:</strong> ${
+        opportunity.duration || "Not specified"
+      }</p>
+      <p><strong>Dates:</strong> ${opportunity.dates || "Not specified"}</p>
+      <a href="${opportunity.url}" target="_blank">Learn More</a>
+    `;
+    resultsContainer.appendChild(opportunityElement);
   });
 }
 
-// Initialize map when page loads
-window.onload = function() {
-  if (typeof google !== 'undefined' && google.maps) {
-    initMap();
+function displayPaginationControls(data) {
+  const resultsContainer = document.getElementById("results");
+
+  const existingPagination = document.getElementById("pagination");
+  if (existingPagination) {
+    existingPagination.remove();
   }
-};
+
+  if (!data.next && !data.previous) {
+    return;
+  }
+
+  const paginationContainer = document.createElement("div");
+  paginationContainer.id = "pagination";
+  paginationContainer.className = "pagination";
+
+  let paginationHTML = '<div class="pagination-controls">';
+
+  if (data.previous) {
+    paginationHTML += `<button class="pagination-btn" onclick="loadPage('${
+      data.previous
+    }', ${currentPage - 1})">Previous</button>`;
+  } else {
+    paginationHTML += `<button class="pagination-btn disabled" disabled>Previous</button>`;
+  }
+  paginationHTML += `<span class="page-info">Page ${currentPage}</span>`;
+  if (data.next) {
+    paginationHTML += `<button class="pagination-btn" onclick="loadPage('${
+      data.next
+    }', ${currentPage + 1})">Next</button>`;
+  } else {
+    paginationHTML += `<button class="pagination-btn disabled" disabled>Next</button>`;
+  }
+
+  paginationHTML += "</div>";
+  paginationContainer.innerHTML = paginationHTML;
+  resultsContainer.appendChild(paginationContainer);
+}
+
+function loadPage(pageUrl, pageNumber) {
+  currentPage = pageNumber;
+  findOpportunities(pageUrl);
+  document.getElementById("results").scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}
+
+document
+  .getElementById("search-button")
+  .addEventListener("click", () => findOpportunities());
+
+document
+  .getElementById("location-input")
+  .addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      findOpportunities();
+    }
+  });

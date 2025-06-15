@@ -1,4 +1,3 @@
-<!-- API Key: AIzaSyBnWtJ6hNUlgVPCrrWBgD53-oSCubHFPgc -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,9 +32,15 @@
         <h1>Volunteering Opportunities</h1>
       </div>
     </div>
-      <gmp-map center="40.12150192260742,-100.45039367675781" zoom="4" map-id="DEMO_MAP_ID">
-      <gmp-advanced-marker position="40.12150192260742,-100.45039367675781" title="My location"></gmp-advanced-marker>
-      </gmp-map>
+    <div class="api-container">
+      <h2>Find jobs and opportunities near you!</h2>
+      <p>Enter your address or zip code and choose a volunteering opportunity that looks like a good match.</p>
+      <div class="search-container">
+        <input type="text" id="location-input" placeholder="Enter your address or zip code" />
+        <button id="search-button">Search</button>
+      </div>
+    </div>
+    <div id="results" class="results-container"></div>
 
     <script src="js/script.js"></script>
   </body>
